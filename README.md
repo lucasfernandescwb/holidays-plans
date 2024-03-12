@@ -7,51 +7,51 @@ This is an API project with Laravel, made for a test I was asked to do. Follow t
 Clone the application repository:
 
 ```bash
-git clone https://gitlab.com/lucasfernandescwb/full-stack-test.git
+git clone https://github.com/lucasfernandescwb/holidays-plans
 ```
 
-## Entrar na Pasta Full Stack Test e Trocar para a Branch Develop
+## Enter in "holidays-plans" directory and change its branch to develop
 
 ```bash
-cd full-stack-test
+cd holidays-plans
 git checkout develop
 ```
 
 ## Backend configuration
 
-1. Copie o arquivo `.env.example` e renomeie para `.env`. Configure os campos `DB_USERNAME` como `xrosoff` e `DB_PASSWORD` como `pocky123`.
+1. Copy `.env.example` file and rename it to `.env`. Configure the following fields: `DB_USERNAME` = `xrosoff` and `DB_PASSWORD` = `pocky123`.
 
-2. Instale as dependências com o Composer:
+2. Install Composer dependencies:
 
 ```bash
 composer install
 ```
 
-3. Execute os comandos Docker:
+3. Execute Docker commands:
 
 ```bash
 docker-compose up -d
 docker-compose exec app bash
 ```
 
-4. Gere a chave da aplicação (caso necessário):
+4. Generate application key (if there's none):
 
 ```bash
 php artisan key:generate
 ```
 
-5. Rode as migrations:
+5. Run migrations:
 
 ```bash
 php artisan migrate:fresh
 ```
 
-6. Ative o link simbólico:
+6. Enable symoblic link:
 
 ```bash
 php artisan storage:link
 ```
 
-## Autor
+## Author
 
 Lucas Fernandes Lima
