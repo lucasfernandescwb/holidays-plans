@@ -52,6 +52,12 @@ php artisan migrate:fresh
 php artisan storage:link
 ```
 
+7. Run tests (optional):
+
+```bash
+php artisan test
+```
+
 ## Author
 
 Lucas Fernandes Lima
