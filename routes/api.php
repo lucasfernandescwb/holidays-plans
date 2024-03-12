@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\Auth\UserController;
 use App\Http\Controllers\API\HolidayPlan\GeneratePdfController;
+use App\Http\Controllers\API\HolidayPlan\GenerateSinglePdfController;
 use App\Http\Controllers\API\HolidayPlan\HolidayPlanController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -31,7 +32,10 @@ Route::prefix('holidays-plans')->group(function () {
     Route::get('/{holidayPlan}', [HolidayPlanController::class, 'index']);
 });
 
-Route::get('pdf/holidays-plans', GeneratePdfController::class);
+Route::prefix('pdf')->group(function () {
+    Route::get('holidays-plans', GeneratePdfController::class);
+    Route::get('holidays-plans/{holidayPlan}', GenerateSinglePdfController::class);
+});
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('auth/logout', [UserController::class, 'logout']);
